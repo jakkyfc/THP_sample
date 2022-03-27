@@ -1,4 +1,8 @@
 'use strict';
+const CACHE_NAME = 'THP';
+const urlsToCache = [
+];
+
 //installイベントの場合
 //前述のファイルパスをすべてキャッシュに登録する
 self.addEventListener('install', function(event) {
