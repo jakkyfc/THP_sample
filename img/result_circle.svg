@@ -1,4 +1,4 @@
-<svg version="1.1" width="10" height="10" viewBox="0 0 10 10">
+<svg width="10" height="10">
 <defs>
   <!-- 線形グラデーション -->
   <linearGradient id="g01" gradientTransform="rotate(90)">
