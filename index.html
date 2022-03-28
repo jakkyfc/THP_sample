@@ -5,10 +5,42 @@
         <link rel="icon" type="image/png" sizes="128x128" href="./img/android-128x128.png">
         <link rel="manifest" href="./manifest.json">
         <script src="./index.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
+        <!-- タイトル -->
+        <a class="navbar-brand" href="#">サイトタイトル</a>
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <!-- タイトル -->
+            <a class="navbar-brand" href="#">Hello, THP PWA.</a>
+            <!-- ハンバーガーメニュー -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- ナビゲーションメニュー -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">リンク１</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">リンク２</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">設定</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+
         <h1>Hello PWA.</h1>
         <img src="./img/android-128x128.png" alt="PWA logo" class="image" />
         <a href="sub.html">link to sub.html</a>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       </body>
 </html>
