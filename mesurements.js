@@ -1,21 +1,33 @@
 /**
+ *  https://hirooooo-lab.com/development/javascript-sleep/
+ * 
+ */
+ function _sleep(ms){
+    let pr = new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+    return pr
+}
+
+/**
  *  sample download 
  * 
  */
 
-function dl_mbps(){
+async function dl_mbps(){
     let dl_speed = 0.0;
+    await _sleep(1500);
     dl_speed = Math.random() * 1000.0;
     return dl_speed;
 }
 
-
 /**
  *  sample UpLoad
  */
-function ul_mbps(){
+async function ul_mbps(){
     let ul_speed = 0.0;
     ul_speed = Math.random() * 10.0;
+    await _sleep(2000);
     return ul_speed;
 }
 
@@ -29,18 +41,16 @@ function web_sec(){
 }
 
 
-function start(){
+async function start(){
     // dl
-    let dl = dl_mbps();
+    let dl = await dl_mbps();
     document.querySelector("#dl>.num").innerText = Math.trunc(dl);
     document.querySelector("#dl>.float").innerText = "." + String(Math.trunc((dl - Math.trunc(dl))*100.0));
 
-
     // ul
-    let ul = ul_mbps();
+    let ul = await ul_mbps();
     document.querySelector("#ul>.num").innerText = Math.trunc(ul);
     document.querySelector("#ul>.float").innerText = "." + String(Math.trunc((ul - Math.trunc(ul))*100.0));
-
 
     // web
 
