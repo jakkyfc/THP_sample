@@ -42,6 +42,10 @@ function web_sec(){
 
 
 async function start(){
+    // visible modal
+
+    // visible progress bar
+
     // dl
     let dl = await dl_mbps();
     document.querySelector("#dl>.num").innerText = Math.trunc(dl);
@@ -54,6 +58,8 @@ async function start(){
 
     // web
 
+    // hidden modal & progress bar
+    
 }
 
 document.getElementById("start_btn").addEventListener("click", start);
