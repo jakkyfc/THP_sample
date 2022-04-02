@@ -13,6 +13,7 @@
  *  sample download 
  * 
  */
+
 async function dl_mbps(){
     let dl_speed = 0.0;
     await _sleep(1500);
@@ -39,12 +40,17 @@ function web_sec(){
     return web;
 }
 
+
 async function start(){
     // visible progress bar
     let status_tag = document.getElementById("status");
     status_tag.setAttribute("class", "spinner-border");
     status_tag.setAttribute("role", "status");
-    
+
+    // backup h2 tag
+    const span_start = status_tag.childNodes[1];
+    status_tag.removeChild(span_start);
+
     // dl
     let dl = await dl_mbps();
     document.querySelector("#dl>.num").innerText = Math.trunc(dl);
@@ -60,6 +66,9 @@ async function start(){
     // progress bar
     status_tag.setAttribute("class", "");
     status_tag.setAttribute("role", "");
+
+    // restore h2 tag
+    status_tag.appendChild(span_start);
 }
 
 document.getElementById("start_btn").addEventListener("click", start);
