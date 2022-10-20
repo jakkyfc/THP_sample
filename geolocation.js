@@ -8,7 +8,7 @@ function success(pos) {
   let crd = pos.coords;
 
   if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
-    console.log('Congratulations, you reached the target');
+    alert('Congratulations, you reached the target');
     navigator.geolocation.clearWatch(id);
   }
 }
