@@ -6,21 +6,12 @@ let id, target, options;
 
 function success(pos) {
   let crd = pos.coords;
-
-  if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
-    alert('Congratulations, you reached the target');
-    navigator.geolocation.clearWatch(id);
-  }
+  console.log(`Your current position is: ${crd.latitude} , ${crd.longitude}. (${crd.accuracy} )`);
 }
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
-
-target = {
-  latitude : 0,
-  longitude: 0
-};
 
 options = {
   enableHighAccuracy: false,
