@@ -42,14 +42,13 @@ function web_sec(){
 
 
 async function start(){
+    const status_msg = "START >>";
     // visible progress bar
-    let status_tag = document.getElementById("status");
-    status_tag.setAttribute("class", "spinner-border");
+    let status_tag = document.querySelector('#status>h2');
+    status_tag.innerText = "";
+    status_tag.setAttribute("class", "spinner-border disable");
     status_tag.setAttribute("role", "status");
-
-    // backup h2 tag
-    const span_start = status_tag.childNodes[1];
-    status_tag.removeChild(span_start);
+    
 
     // dl
     let dl = await dl_mbps();
@@ -68,7 +67,9 @@ async function start(){
     status_tag.setAttribute("role", "");
 
     // restore h2 tag
-    status_tag.appendChild(span_start);
+    status_tag.innerText = status_msg;
 }
 
+// init
+document.querySelector('#status>h2').innerText = "START >>";
 document.getElementById("start_btn").addEventListener("click", start);
