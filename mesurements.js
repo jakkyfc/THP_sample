@@ -34,10 +34,12 @@ async function ul_mbps(){
 /**
  *  sample http
  */
-function web_sec(){
-    let web = 0.0;
-    web = Math.random() * 10.0;
-    return web;
+async function web_sec(){
+    const url =`https://jakkyfc.github.io/THP_sample/img/android-128x128.png?${Date.now()}`;
+    const before = Date.now();
+    const file = await fetch(url);
+    const after = Date.now() - before;
+    return after;
 }
 
 
@@ -61,6 +63,9 @@ async function start(){
     document.querySelector("#ul>.float").innerText = "." + String(Math.trunc((ul - Math.trunc(ul))*100.0));
 
     // web
+    let web = await web_sec();
+    document.querySelector("#web>.num").innerText = Math.trunc(web/1000.0);
+    document.querySelector("#web>.float").innerText = "." + String(Math.trunc((web - Math.trunc(web/1000.0)*1000.0)));
 
     // progress bar
     status_tag.setAttribute("class", "");
@@ -72,4 +77,4 @@ async function start(){
 
 // init
 document.querySelector('#status>h2').innerText = "START >>";
-document.getElementById("start_btn").addEventListener("click", start);
+document.getElementById("status").addEventListener("click", start);
