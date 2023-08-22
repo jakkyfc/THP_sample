@@ -8,12 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Append the `?module` param to load the module version of `web-vitals` -->
         <script type="module">
-          import {onCLS, onFID, onLCP, onFCP} from 'https://unpkg.com/web-vitals@3?module';
+          import {onCLS, onFID, onLCP, onFCP, onTTFB} from 'https://unpkg.com/web-vitals@3?module';
         
           onCLS(console.log);
           onFID(console.log);
           onLCP(console.log);
           onFCP(console.log);
+          onTTFB(console.log);
         </script>
         <script src="./index.js"></script>
         <!-- Bootstrap CSS -->
